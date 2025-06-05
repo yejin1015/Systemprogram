@@ -12,21 +12,12 @@
 ### ✅ 사용법
 cp [옵션] 원본 대상
 
-markdown
-복사
-편집
-
 ### 🛠 주요 옵션
 - `-i`: 덮어쓰기 전에 확인하는 대화형 모드
 
 ### 📌 예시
 cp a.txt b.txt # a.txt를 b.txt로 복사
 cp -i a.txt b.txt # 덮어쓰기 전에 사용자에게 확인 요청
-
-yaml
-복사
-편집
-
 ---
 
 ## 📂 mv — 파일 이동 또는 이름 변경 (move)
@@ -36,10 +27,6 @@ yaml
 ### ✅ 사용법
 mv [옵션] 원본 대상
 
-markdown
-복사
-편집
-
 ### 🛠 주요 옵션
 - `-i`: 기존 파일이 있을 경우, 덮어쓰기 전 사용자에게 확인
 
@@ -47,10 +34,6 @@ markdown
 mv old.txt new.txt # 파일 이름 변경
 mv file.txt ~/Downloads/ # 파일을 다른 폴더로 이동
 mv -i file.txt result.txt # 덮어쓰기 전에 확인 요청
-
-yaml
-복사
-편집
 
 ---
 
@@ -61,9 +44,6 @@ yaml
 ### ✅ 사용법
 rm [옵션] 파일명...
 
-markdown
-복사
-편집
 
 ### 🛠 주요 옵션
 - `-i`: 삭제 전 확인
@@ -74,18 +54,11 @@ rm file.txt # 단일 파일 삭제
 rm -i file.txt # 삭제 전 확인 요청
 rm -r myfolder/ # 디렉터리 전체 삭제
 
-markdown
-복사
-편집
 
 ### ⚠️ 주의사항
 - `rm`은 복구 불가능합니다. 중요 파일 삭제 시 주의!
 - 비어 있는 폴더는 `rmdir`을 사용하여 삭제 가능합니다.
 rmdir empty_folder/
-
-yaml
-복사
-편집
 
 ---
 
@@ -96,9 +69,6 @@ yaml
 ### ✅ 사용법
 ln [옵션] 원본 링크이름
 
-shell
-복사
-편집
 
 ### 🛠 주요 옵션
 - `-s`: 심볼릭 링크(소프트 링크)를 생성
@@ -114,17 +84,3 @@ shell
 ln a.txt b.txt # 하드 링크 생성
 ln -s a.txt link.txt # 심볼릭 링크 생성
 
-yaml
-복사
-편집
-
----
-
-## 📖 참고
-
-각 명령어에 대한 자세한 설명은 아래의 `man` 명령어로 확인할 수 있습니다.
-
-man cp
-man mv
-man rm
-man ln
