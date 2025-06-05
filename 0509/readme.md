@@ -34,9 +34,7 @@ int utime(const char *filename, const struct utimbuf *times);
 times == NULL이면 현재 시간으로 설정
 
 👤 소유자 변경: chown(), fchown(), lchown()
-c
-복사
-편집
+
 #include <unistd.h>
 int chown(const char *path, uid_t owner, gid_t group);
 int fchown(int fd, uid_t owner, gid_t group);
