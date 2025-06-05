@@ -19,32 +19,45 @@
 GitHub README 형식으로 요약 정리해줘.
 
 
-## 🖥️ 예시 언어: Rust
+## 🖥️ 언어 c
 
-```rust
-use std::io;
+#include <stdio.h>
 
-fn main() {
-    println!("0~255 사이의 정수 입력:");
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
+int main() {
+    int num;
 
-    let num: u8 = match input.trim().parse() {
-        Ok(n) if n <= 255 => n,
-        _ => {
-            println!("잘못된 입력입니다.");
-            return;
-        }
-    };
+    // 0~255 사이의 수 입력
+    printf("0~255 사이의 정수를 입력하세요: ");
+    scanf("%d", &num);
 
-    let binary = format!("{:08b}", num);
-    let ones_count = binary.chars().filter(|&c| c == '1').count();
-    let upper_4 = &binary[..4];
+    // 범위 체크
+    if (num < 0 || num > 255) {
+        printf("잘못된 입력입니다. 0~255 사이의 수를 입력하세요.\n");
+        return 1;
+    }
 
-    println!("입력된 숫자: {}", num);
-    println!("2진수(8비트): {}", binary);
-    println!("1의 개수: {}", ones_count);
-    println!("상위 4비트: {}", upper_4);
+    // 2진수 출력 및 1의 개수 세기
+    int count = 0;
+    printf("2진수: ");
+    for (int i = 7; i >= 0; i--) {
+        int bit = (num >> i) & 1;
+        printf("%d", bit);
+        if (bit == 1) count++;
+    }
+    printf("\n");
+
+    // 1의 개수 출력
+    printf("1의 개수: %d개\n", count);
+
+    // 상위 4비트 출력
+    int upper4 = (num >> 4) & 0x0F;  // 상위 4비트만 남김
+    printf("상위 4비트: ");
+    for (int i = 3; i >= 0; i--) {
+        printf("%d", (upper4 >> i) & 1);
+    }
+    printf("\n");
+
+    return 0;
 }
 🧪 실행 예시
 
@@ -56,6 +69,6 @@ fn main() {
 상위 4비트: 1101
 
 📁 참고 사항
-이 프로젝트는 Rust 외에도 Python, Java, C, JavaScript, Go, C++ 등 다양한 언어로 구현 가능하며, 각 언어별 코드 파일은 별도로 정리되어 있습니다.
+이 프로젝트는 Python, Java, C, JavaScript, Go, C++ 등 다양한 언어로 구현 가능하며, 각 언어별 코드 파일은 별도로 정리되어 있습니다.
 
 생성형 AI를 활용한 코드 생성 및 문서화가 핵심 학습 목표입니다.
